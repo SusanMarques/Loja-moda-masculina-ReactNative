@@ -13,7 +13,7 @@ export default function Screen() {
         <SafeAreaView style={styles.container}>
             <StatusBar/>
             <Image
-                source={require('../assets/banner-loja-masculina.jpg')}
+                source={require('../assets/app-loja-masculina.jpg')}
                 style={styles.banner}
                 resizeMode="cover"
             />
