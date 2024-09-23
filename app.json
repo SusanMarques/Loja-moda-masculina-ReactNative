@@ -3,6 +3,7 @@
     "name": "loja-moda-masculina",
     "slug": "loja-moda-masculina",
     "version": "1.0.0",
+    "scheme": "loja-moda-masculina",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -22,6 +23,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
