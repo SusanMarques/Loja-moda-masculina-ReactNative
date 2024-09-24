@@ -11,13 +11,20 @@ export default function TabLayout(){
                         tabBarIcon :({color}) => <FontAwesome size={28} name="home" color={color}/>
                 }}
             />
-            {/* <Tabs.Screen 
+             <Tabs.Screen 
                 name="categories"
                 options={{
                         title: 'Categorias',
                         headerShown: false,
                         tabBarIcon :({color}) => <FontAwesome size={28} name="archive" color={color}/>
                 }}
+            /> 
+            {/* <Tabs.Screen 
+            name="Menu"
+            options={{
+                    title: 'menu',
+                    tabBarIcon :({color}) => <FontAwesome size={28} name="user" color={color}/>
+            }}
             /> */}
             <Tabs.Screen 
             name="about"
