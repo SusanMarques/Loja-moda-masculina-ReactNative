@@ -31,7 +31,8 @@ export default function Screen(){
 }
 const styles = StyleSheet.create({
     container:{
-        flex:1
+        flex:1,
+       
     },
     list:{
         flex: 1,
@@ -40,6 +41,7 @@ const styles = StyleSheet.create({
     },
     titulo:{
         fontSize: 20,
-        marginLeft: 20
+        marginLeft: 20,
+        fontWeight:'600'
     }
 })

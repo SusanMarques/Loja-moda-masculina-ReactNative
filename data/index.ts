@@ -10,7 +10,7 @@ export const data: Data = {
         {
             id: 1,
             title: 'Nova coleção',
-            cover: 'https://img.lojasrenner.com.br/item/897669761/original/2.jpg'
+            cover: 'https://img.lojasrenner.com.br/item/914512328/original/2.jpg'
         },
         {
             id: 2,
@@ -37,13 +37,13 @@ export const data: Data = {
         { id: 1, idCategory: 1, image: "https://img.lojasrenner.com.br/item/897669761/original/2.jpg", title: "Floral Bege", description: "Jaqueta Bomber em Jacquard Floral Bege", price: 319.90 },
         { id: 2, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927418883/original/2.jpg", title: "Camiseta Rosa", description: "Camiseta em Algodão com Bordado Nature Rosa", price: 119.90 },
         { id: 3, idCategory: 1, image: "https://img.lojasrenner.com.br/item/675077815/original/3.jpg", title: "Camisa Comfort Básica ", description: "Camisa Comfort Básica em Linho com Gola Colarinho Rosa Claro", price: 34.99 },
-        { id: 4, idCategory: 1, image: "https://picsum.photos/id/8/200/200", title: "Roteador Wi-Fi", description: "Conexão estável, cobertura ampla, múltiplos dispositivos.", price: 79.99 },
-        { id: 5, idCategory: 1, image: "https://picsum.photos/id/11/200/200", title: "Montanha Nevada", description: "Pico alto, esportes de inverno, beleza natural.", price: 59.99 },
-        { id: 6, idCategory: 1, image: "https://picsum.photos/id/5/200/200", title: "Tablet 10\"", description: "Tela brilhante, ideal para entretenimento e produtividade.", price: 299.99 },
-        { id: 7, idCategory: 1, image: "https://picsum.photos/id/20/200/200", title: "Bolsa de Couro", description: "Design clássico, espaçosa e elegante para uso.", price: 89.99 },
-        { id: 8, idCategory: 1, image: "https://picsum.photos/id/24/200/200", title: "Chapéu Elegante", description: "Proteção solar, estilo casual e estiloso.", price: 19.99 },
-        { id: 9, idCategory: 1, image: "https://picsum.photos/id/4/200/200", title: "Smartwatch", description: "Monitoramento de saúde e notificações inteligentes.", price: 149.99 },
-        { id: 10, idCategory: 1, image: "https://picsum.photos/id/7/200/200", title: "Console X", description: "Gráficos avançados, ampla biblioteca de jogos.", price: 399.99 },
+        { id: 4, idCategory: 1, image: "https://img.lojasrenner.com.br/item/897680388/original/2.jpg", title: "Bermuda em Algodão", description: "Bermuda em Algodão Texturizada e Cordão no Cós Bege", price: 79.99 },
+        { id: 5, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927317943/original/2.jpg", title: "Camiseta Polo", description: "Camiseta Polo Regular em Crochê com Mix de Pontos Off White", price: 59.99 },
+        { id: 6, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927319615/original/3.jpg", title: "Camiseta em Algodão", description: "Camiseta em Algodão com Estampa Quadro Flowers Off White", price: 99.99 },
+        { id: 7, idCategory: 1, image: "https://img.lojasrenner.com.br/item/914512328/original/2.jpg", title: "Óculos de Sol", description: "Óculos de Sol Redondo em Metal com Hastes Finas e Lente Fumê Prata", price: 89.99 },
+        { id: 8, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927959241/original/8.jpg", title: "Tênis ", description: "Tênis em Material Sintético com Textura Everlast Range 03 Branco e Marrom", price: 219.99 },
+        { id: 9, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927943215/original/3.jpg", title: "Regata Regular", description: "Regata Regular com Textura em Tricô Cinza", price: 149.99 },
+        { id: 10, idCategory: 1, image: "https://img.lojasrenner.com.br/item/916265009/original/3.jpg", title: "Calça em Sarja", description: "Calça em Sarja com Bolso Cargo Bege", price: 199.99 },
         { id: 11, idCategory: 1, image: "https://picsum.photos/id/23/200/200", title: "Carteira Slim", description: "Compacta e prática, material durável.", price: 29.99 },
         { id: 12, idCategory: 1, image: "https://picsum.photos/id/30/200/200", title: "Cinto de Couro", description: "Alta qualidade, fivela ajustável, durável.", price: 24.99 },
         { id: 13, idCategory: 1, image: "https://picsum.photos/id/2/200/200", title: "Fone Bluetooth", description: "Som cristalino, cancelamento de ruído ativo.", price: 199.99 },
