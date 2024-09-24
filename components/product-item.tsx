@@ -17,9 +17,8 @@ export const ProductItem = ({data}: Props) =>{
                     resizeMode="cover"
                 />
                 <View style={styles.info}>
-                    <Text style={styles.title}>{data.title}</Text>
-                    <Text style={styles.description}>{data.description}</Text>
                     <Text style={styles.price}>R$ {data.price.toFixed(2)}</Text>
+                    <Text style={styles.title}>{data.title}</Text>
                 </View>
             </Pressable>
         </Link>
@@ -27,13 +26,12 @@ export const ProductItem = ({data}: Props) =>{
 }
 const styles = StyleSheet.create({
     container:{
-        flexDirection: 'row',
         marginBottom: 20
     },
     img:{
-        width: 100,
-        height: 100,
-        borderRadius: 10,
+        width: 200,
+        height: 250,
+        borderRadius: 30,
         backgroundColor: "#CCCCCC",
         marginRight: 20
     },
@@ -51,8 +49,8 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     price:{
-        fontSize: 14,
+        fontSize: 20,
         fontWeight: 'bold',
-        textAlign: 'right'
+       
     }
 })

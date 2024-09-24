@@ -34,9 +34,9 @@ export const data: Data = {
         }
     ],
     products:[
-        { id: 1, idCategory: 1, image: "https://picsum.photos/id/3/200/200", title: "Câmera 4K", description: "Gravação ultra HD, qualidade profissional.", price: 499.99 },
-        { id: 2, idCategory: 1, image: "https://picsum.photos/id/22/200/200", title: "Óculos de Sol", description: "Proteção UV, design moderno, armação leve.", price: 49.99 },
-        { id: 3, idCategory: 1, image: "https://picsum.photos/id/14/200/200", title: "Floresta Verde", description: "Refúgio natural, ideal para caminhadas e exploração.", price: 34.99 },
+        { id: 1, idCategory: 1, image: "https://img.lojasrenner.com.br/item/897669761/original/2.jpg", title: "Floral Bege", description: "Jaqueta Bomber em Jacquard Floral Bege", price: 319.90 },
+        { id: 2, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927418883/original/2.jpg", title: "Camiseta Rosa", description: "Camiseta em Algodão com Bordado Nature Rosa", price: 119.90 },
+        { id: 3, idCategory: 1, image: "https://img.lojasrenner.com.br/item/675077815/original/3.jpg", title: "Camisa Comfort Básica ", description: "Camisa Comfort Básica em Linho com Gola Colarinho Rosa Claro", price: 34.99 },
         { id: 4, idCategory: 1, image: "https://picsum.photos/id/8/200/200", title: "Roteador Wi-Fi", description: "Conexão estável, cobertura ampla, múltiplos dispositivos.", price: 79.99 },
         { id: 5, idCategory: 1, image: "https://picsum.photos/id/11/200/200", title: "Montanha Nevada", description: "Pico alto, esportes de inverno, beleza natural.", price: 59.99 },
         { id: 6, idCategory: 1, image: "https://picsum.photos/id/5/200/200", title: "Tablet 10\"", description: "Tela brilhante, ideal para entretenimento e produtividade.", price: 299.99 },
