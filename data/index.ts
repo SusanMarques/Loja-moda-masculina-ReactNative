@@ -10,17 +10,17 @@ export const data: Data = {
         {
             id: 1,
             title: 'Nova coleção',
-            cover: 'https://img.lojasrenner.com.br/item/914512328/original/2.jpg'
+            cover: 'https://img.lojasrenner.com.br/item/883896233/original/6.jpg'
         },
         {
             id: 2,
             title: 'Blusões e Suéteres',
-            cover: 'https://img.lojasrenner.com.br/item/598791133/original/3.jpg'
+            cover: 'https://img.lojasrenner.com.br/item/670856991/original/3.jpg'
         },
         {
             id: 3,
             title: 'Camisetas',
-            cover: 'https://img.lojasrenner.com.br/item/927886716/original/3.jpg'
+            cover: 'https://img.lojasrenner.com.br/item/879734485/original/3.jpg'
         },
         {
             id: 4,
@@ -34,9 +34,9 @@ export const data: Data = {
         }
     ],
     products:[
-        { id: 1, idCategory: 1, image: "https://img.lojasrenner.com.br/item/897669761/original/2.jpg", title: "Floral Bege", description: "Jaqueta Bomber em Jacquard Floral Bege", price: 319.90 },
-        { id: 2, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927418883/original/2.jpg", title: "Camiseta Rosa", description: "Camiseta em Algodão com Bordado Nature Rosa", price: 119.90 },
-        { id: 3, idCategory: 1, image: "https://img.lojasrenner.com.br/item/675077815/original/3.jpg", title: "Camisa Comfort Básica ", description: "Camisa Comfort Básica em Linho com Gola Colarinho Rosa Claro", price: 34.99 },
+        { id: 1, idCategory: 1, image: "https://img.lojasrenner.com.br/item/883896233/original/3.jpg", title: "Camiseta azul", description: "Camiseta básica azul", price: 319.90 },
+        { id: 2, idCategory: 1, image: "https://img.lojasrenner.com.br/item/879734485/original/3.jpg", title: "Camisa azul claro", description: "Camiseta em Algodão com Bordado Nature Rosa", price: 119.90 },
+        { id: 3, idCategory: 1, image: "https://img.lojasrenner.com.br/item/675077815/original/3.jpg", title: "Camisa rosa ", description: "Camisa Comfort Básica em Linho com Gola Colarinho Rosa Claro", price: 34.99 },
         { id: 4, idCategory: 1, image: "https://img.lojasrenner.com.br/item/897680388/original/2.jpg", title: "Bermuda em Algodão", description: "Bermuda em Algodão Texturizada e Cordão no Cós Bege", price: 79.99 },
         { id: 5, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927317943/original/2.jpg", title: "Camiseta Polo", description: "Camiseta Polo Regular em Crochê com Mix de Pontos Off White", price: 59.99 },
         { id: 6, idCategory: 1, image: "https://img.lojasrenner.com.br/item/927319615/original/3.jpg", title: "Camiseta em Algodão", description: "Camiseta em Algodão com Estampa Quadro Flowers Off White", price: 99.99 },
