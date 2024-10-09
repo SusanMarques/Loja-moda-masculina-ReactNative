@@ -12,19 +12,27 @@ export default function Screen() {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar/>
+            
             <Image
-                source={require('../assets/app-loja-masculina.jpg')}
+                source={require('../assets/background-loja.jpg')}
                 style={styles.banner}
                 resizeMode="cover"
             />
             
-            {/* Camada preta semi-transparente */}
-            <View style={styles.overlay} />
-
+          
+          
+            <Image
+                source={require('../assets/shop-logo.png')}
+                style={styles.logo}
+                
+            />
             <View style={styles.content}>
-                <Text style={styles.h1}>Modern Man</Text>
+            <Image
+                source={require('../assets/logo-titulo-shopman.png')}
+                style={styles.logoTitulo}
+            />
                 <Button
-                    title="Comprar"
+                    title="Ver produtos"
                     onPress={start}
                 />
             </View>
@@ -44,10 +52,6 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
     },
-    overlay: {
-        ...StyleSheet.absoluteFillObject, 
-        backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-    },
     content: {
         justifyContent: 'center',
         alignItems: 'center',
@@ -60,4 +64,14 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         color: 'white', 
     },
+    logo:{
+        width: 200,
+        height: 200,
+        zIndex: 1,
+        marginBottom: 40
+    },
+    logoTitulo:{
+        height: 50,
+        width: 200
+    }
 });

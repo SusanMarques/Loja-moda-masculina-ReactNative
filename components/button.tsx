@@ -16,7 +16,7 @@ export const Button = ({title, onPress}: Props) =>{
 const styles = StyleSheet.create({
     button: {
         backgroundColor: 'transparent', 
-        borderColor: '#FFFFFF', 
+        borderColor: '#2D59F0', 
         borderWidth: 2, 
         borderRadius: 30,
         paddingVertical: 10,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     },
     buttonText:{
         fontSize: 20,
-        color: '#FFFFFF',
+        color: '#2D59F0',
         textAlign: 'center'
     }
 })
