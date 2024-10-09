@@ -16,16 +16,9 @@ export default function TabLayout(){
                 options={{
                         title: 'Categorias',
                         headerShown: false,
-                        tabBarIcon :({color}) => <FontAwesome size={28} name="archive" color={color}/>
+                        tabBarIcon :({color}) => <FontAwesome size={28} name="table" color={color}/>
                 }}
             /> 
-            {/* <Tabs.Screen 
-            name="Menu"
-            options={{
-                    title: 'menu',
-                    tabBarIcon :({color}) => <FontAwesome size={28} name="user" color={color}/>
-            }}
-            /> */}
             <Tabs.Screen 
             name="about"
             options={{
@@ -33,6 +26,13 @@ export default function TabLayout(){
                     tabBarIcon :({color}) => <FontAwesome size={28} name="user" color={color}/>
             }}
         />
+         <Tabs.Screen 
+            name="menu"
+            options={{
+                    title: 'menu',
+                    tabBarIcon :({color}) => <FontAwesome size={28} name="bars" color={color}/>
+            }}
+            /> 
         </Tabs>
     );
 }
