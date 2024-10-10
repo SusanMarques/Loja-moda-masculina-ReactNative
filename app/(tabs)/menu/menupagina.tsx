@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity , Image} from "react-native";
 import { useRouter } from "expo-router";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 
 export default function Screen(){
@@ -7,20 +8,29 @@ export default function Screen(){
     return(
         <View >
             <ScrollView>
-            <TouchableOpacity onPress={() => router.push('/menu/minhaConta')}>
-                <Text style={styles.menuItem}>Minha conta</Text>
+            <TouchableOpacity  style={styles.menuItem} onPress={() => router.push('/menu/minhaConta')}>
+                <FontAwesome size={25} name="user"  style={styles.ico}/>
+                <Text style={styles.tituloMenu}> Minha conta </Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => router.push('/menu/ofertas')}>
-                    <Text style={styles.menuItem}>Ofertas e promoções</Text>
+
+            <TouchableOpacity  style={styles.menuItem} onPress={() => router.push('/menu/ofertas')}>
+                <FontAwesome size={25} name="tags"  style={styles.ico}/>
+                <Text style={styles.tituloMenu}> Ofertas e promoções</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => router.push('/menu/carrinho')}>
-                    <Text style={styles.menuItem}>Carrinho</Text>
+
+            <TouchableOpacity  style={styles.menuItem} onPress={() => router.push('/menu/carrinho')}>
+                <FontAwesome size={25} name="shopping-cart"  style={styles.ico}/>
+                <Text style={styles.tituloMenu}> Carrinho</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => router.push('/menu/sobre')}>
-                    <Text style={styles.menuItem}>Sobre a Loja</Text>
+
+            <TouchableOpacity  style={styles.menuItem} onPress={() => router.push('/menu/sobre')}>
+                <FontAwesome size={25} name="shopping-bag"  style={styles.ico}/>
+                <Text style={styles.tituloMenu}> Sobre a Loja</Text>
             </TouchableOpacity>
-            <TouchableOpacity onPress={() => router.push('/menu/configuracoes')}>
-                    <Text style={styles.menuItem}>Configurações</Text>
+
+            <TouchableOpacity  style={styles.menuItem} onPress={() => router.push('/menu/configuracoes')}>
+                <FontAwesome size={25} name="cog"  style={styles.ico}/>
+                <Text style={styles.tituloMenu}> Configurações</Text>
             </TouchableOpacity>
             </ScrollView>
         </View>
@@ -28,15 +38,25 @@ export default function Screen(){
 }
 const styles = StyleSheet.create({
 menuItem: {
+    flex: 1,
+    flexDirection: 'row',
     fontSize: 18,
     marginVertical: 10,
     color: '#007AFF', 
     backgroundColor: '#fff',
-    padding: 10,
+    padding: 20,
+    justifyContent: 'center',
 },
 img:{
     width: 30,
     height: 30
 },
-
+ico:{
+paddingRight:10,
+color: '#007AFF'
+},
+tituloMenu:{
+    color: '#007AFF',
+    fontSize: 20
+}
 });
