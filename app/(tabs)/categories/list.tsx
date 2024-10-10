@@ -22,11 +22,11 @@ export default function Screen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff'
+    backgroundColor: '#DEE6F3'
   },
   list: {
     flex: 1,
-    padding: 10,
+    padding: 25,
   },
   row: {
     justifyContent: "space-between", // Espaça as categorias igualmente
