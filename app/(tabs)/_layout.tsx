@@ -9,7 +9,7 @@ export default function TabLayout(){
           tabBarActiveTintColor: '#fff',  // Cor do ícone/texto da aba ativa
           tabBarInactiveTintColor: '#DEE6F3',  // Cor do ícone/texto da aba inativa
           tabBarStyle: {
-            backgroundColor: '#1167f2',  // Cor de fundo da barra de abas (azul)
+            backgroundColor: '#004398',  // Cor de fundo da barra de abas (azul)
             borderTopWidth: 0,  // Remove a borda superior
             borderRadius: 15,  // Adiciona borda arredondada na tab bar
             margin: 10,  // Adiciona margem para dar espaço entre a tab bar e a borda da tela
@@ -19,7 +19,7 @@ export default function TabLayout(){
             bottom: 10,
           },
           headerStyle: {
-            backgroundColor: '#1167f2',  // Cor da barra superior (header)
+            backgroundColor: '#004398',  // Cor da barra superior (header)
             borderBottomLeftRadius: 20,  // Borda arredondada no canto inferior esquerdo
             borderBottomRightRadius: 20,  // Borda arredondada no canto inferior direito
             height: 100,  // Ajusta a altura do header para caber o estilo arredondado

@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, Linking } from "react-native";
+import { View, Text, StyleSheet, Image, Linking, ScrollView } from "react-native";
 
 export default function Screen() {
 
@@ -9,75 +9,46 @@ export default function Screen() {
 
     return (
         <View style={styles.container}>
-            <View style={styles.blocoPerfil}>
-                <View style={styles.fotoenome}>
-                {/* <Image
-                    source={require('../../assets/foto.png')}
-                    resizeMode="cover"
-                    style={styles.perfil}
-                /> */}
-                <Text style={styles.nome}> {'<'} SUSAN KARIN /{'>'}</Text>
-                </View>
-                <View style={styles.bloco}>
-                <Text style={styles.descricao}>
-                    Concluinte em licenciatura em informática no IFRN e cursando desenvolvimento de sistemas no Senac/RN {"\n"}
-                    🌱 Atualmente estou aprendendo JavaScript e React Native{"\n"}
-                    💬 HardSkills: JavaScript, PHP, Laravel, React Native, Expo, Electron, React, API rest, Git e Github, PostgreSQL, SQL server, MYSQL, HTML e CSS
-                    {"\n"}
-                    Me encontre nas redes sociais:
-                </Text>
-                <Text style={styles.links}>
-                    LinkedIn:{" "}
-                    <Text style={styles.link} onPress={abrirlink}>
-                        https://www.linkedin.com/in/seu-linkedin/
-                    </Text>
-                </Text>
-                </View>
-            </View>
+            <ScrollView>
+                <Image
+                source={require('../../assets/shop-logo.png')}
+                style={styles.logo}
+                />
+            <Text style={styles.text}>
+            <Text style={styles.title}>Sobre a Shop Man{"\n"}</Text>
+            A <Text style={styles.bold}>Shop Man</Text> nasceu com o propósito de redefinir o conceito de moda masculina, oferecendo produtos que unem estilo, qualidade e conforto em cada detalhe.{"\n"}{"\n"}
+            Desde nossa fundação, nos dedicamos a entender as necessidades dos homens modernos, que buscam se vestir bem sem abrir mão da praticidade e elegância.{"\n"}{"\n"}
+            Com uma seleção exclusiva de roupas casuais, sociais e acessórios, trabalhamos com marcas reconhecidas e também com coleções próprias, sempre acompanhando as principais tendências da moda mundial.{"\n"}{"\n"}
+            Na <Text style={styles.bold}>Shop Man</Text>, acreditamos que cada peça de roupa deve ser uma extensão da personalidade de quem a veste, seja para o dia a dia ou para ocasiões especiais.{"\n"}{"\n"}
+            Nosso compromisso é proporcionar uma experiência de compra diferenciada, com atendimento personalizado e um ambiente que reflete o estilo e a essência do homem contemporâneo.{"\n"}{"\n"}
+            Mais do que uma loja, somos o destino certo para quem busca sofisticação e autenticidade em cada look.
+            </Text>
+            </ScrollView>
         </View>
     );
 }
-
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        backgroundColor: '#ffffff'
+      flex: 1,
+      padding: 20,
+      backgroundColor: '#F9F9F9'
     },
-    nome: {
-        padding: 10,
-        fontWeight: '500',
-        position: 'relative',
-        marginTop: 100,
-        color: '#713C87'
-       
+    logo:{
+        width: 200,
+        height:200,
     },
-    descricao: {
-        padding: 20,
-        textAlign: 'justify'
+    text: {
+      fontSize: 16,
+      color: '#333',
+      lineHeight: 24,
+      textAlign: 'justify',
     },
-    perfil: {
-        width: 150,
-        height: 150,
-        borderRadius: 100
+    title: {
+      fontSize: 24,
+      fontWeight: 'bold',
+      marginBottom: 10,
     },
-    blocoPerfil: {
-        alignItems: 'center'
+    bold: {
+      fontWeight: 'bold',
     },
-    link: {
-        color: 'blue',
-        textDecorationLine: 'underline',
-        
-    },
-    links:{
-        padding: 20
-    },
-    bloco:{
-        backgroundColor: "#CFA4E1",
-        borderRadius: 15
-    },
-    fotoenome:{
-        flexDirection: 'row',
-        
-        
-    }
-});
+  });
