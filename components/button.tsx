@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
         paddingVertical: 10,
         paddingHorizontal: 25,
         alignItems: 'center', 
+        
     },
     buttonText:{
         fontSize: 20,
