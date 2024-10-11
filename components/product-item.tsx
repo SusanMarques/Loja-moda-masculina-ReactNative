@@ -41,7 +41,8 @@ const styles = StyleSheet.create({
     title:{
         fontSize: 16,
         fontWeight: 'bold',
-        marginBottom: 10
+        marginBottom: 10,
+        fontFamily: 'FiraSans_400Regular',
     },
     description:{
         fontSize: 13,
@@ -49,8 +50,8 @@ const styles = StyleSheet.create({
         marginBottom: 10
     },
     price:{
-        fontSize: 20,
+        fontSize: 17,
         fontWeight: 'bold',
-       
+        fontFamily: 'FiraSans_400Regular',
     }
 })

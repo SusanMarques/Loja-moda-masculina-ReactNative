@@ -12,7 +12,7 @@ export const CategoryItem = ({ data }: Props) => {
     router.navigate(`/categories/${data.id}`);
   };
 
-  // Carrega fontes ( Tenor Sans)
+  // Carrega fontes ( fira Sans)
   let [fontsLoaded] = useFonts({
     FiraSans_400Regular,
   });
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
   container: {
     margin: 10,
     alignItems: "center", // Centraliza o texto e imagem
+    backgroundColor: '#DEE6F3',
   },
   image: {
     width: 120, // Tamanho da imagem/círculo
