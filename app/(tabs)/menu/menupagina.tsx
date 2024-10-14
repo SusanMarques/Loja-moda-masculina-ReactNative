@@ -23,14 +23,14 @@ export default function Screen(){
                 <Text style={styles.tituloMenu}> Carrinho</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity  style={styles.menuItem} onPress={() => router.push('/menu/sobre')}>
-                <FontAwesome size={25} name="shopping-bag"  style={styles.ico}/>
-                <Text style={styles.tituloMenu}> Sobre a Loja</Text>
-            </TouchableOpacity>
-
             <TouchableOpacity  style={styles.menuItem} onPress={() => router.push('/menu/configuracoes')}>
                 <FontAwesome size={25} name="cog"  style={styles.ico}/>
                 <Text style={styles.tituloMenu}> Configurações</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity  style={styles.menuItem} onPress={() => router.push('/menu/cadastrar')}>
+                <FontAwesome size={25} name="plus-square"  style={styles.ico}/>
+                <Text style={styles.tituloMenu}> Cadastrar produtos</Text>
             </TouchableOpacity>
             </ScrollView>
         </View>

@@ -5,7 +5,7 @@ export default function Screen(){
     return(
         <View >
             <ScrollView>
-                <Text> Configurações</Text>
+                
             </ScrollView>
         </View>
     );
