@@ -29,7 +29,8 @@ export const ProductItem = ({data}: Props) =>{
 }
 const styles = StyleSheet.create({
     container:{
-        marginBottom: 20
+        marginBottom: 20,
+        alignItems: 'center'
     },
     img:{
         width: 200,

@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         marginBottom: 20
     },
     title: {
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: 'bold',
         marginBottom: 10,
         textAlign: 'center',
@@ -134,7 +134,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '100%',
-        marginBottom: 20
+        marginBottom: 20,
+        
         
     }
 });
