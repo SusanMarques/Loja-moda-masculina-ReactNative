@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from "react-native";
-import { useRouter } from "expo-router";
+// import { useRouter } from "expo-router";
 
 export default function Screen() {
-    const router = useRouter();
+    // const router = useRouter();
     return (
         <View style={styles.container}>
             <ScrollView contentContainerStyle={styles.scrollViewContent}>
@@ -39,13 +39,13 @@ export default function Screen() {
                     </View>
 
                     {/* Botão Cadastrar Produtos */}
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         style={styles.cadastrarProdutosButton}
                         onPress={() => router.push('/menu/editar')}
                         activeOpacity={0.7}
                     >
                         <Text style={styles.buttonText}>Cadastrar Produtos</Text>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
                 </View>
             </ScrollView>
         </View>
