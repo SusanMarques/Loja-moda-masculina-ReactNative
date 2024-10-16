@@ -1,105 +1,199 @@
-import { View, ScrollView, StyleSheet, Text, TextInput } from "react-native";
-import { useState } from "react";
-import { Button } from "../../../components/button";
+import { SQLiteProvider, useSQLiteContext, type SQLiteDatabase } from 'expo-sqlite';
+import { useEffect, useState } from 'react';
+import { View, Text, StyleSheet, TextInput, ScrollView, Button } from 'react-native';
 
-export default function Screen() {
-  const [id, setId] = useState('');
-  const [categoria, setCategoria] = useState('');
+export default function App() {
+  return (
+    <View style={styles.container}>
+      <SQLiteProvider databaseName="produtos.db" onInit={migrateDbIfNeeded}>
+        <Header />
+        <Content />
+      </SQLiteProvider>
+    </View>
+  );
+}
+
+export function Header() {
+  const db = useSQLiteContext();
+  const [version, setVersion] = useState<string | null>(null); // Permitir que seja nulo inicialmente
+  useEffect(() => {
+    async function setup() {
+      const result = await db.getFirstAsync<{ 'sqlite_version()': string }>('SELECT sqlite_version()');
+      
+      if (result && result['sqlite_version()']) { // Verificando se result não é nulo
+        setVersion(result['sqlite_version()']);
+      } else {
+        setVersion('Versão desconhecida');
+      }
+    }
+    setup();
+  }, [db]);
+  
+  return (
+    <View style={styles.headerContainer}>
+      <Text style={styles.headerText}>SQLite version: {version}</Text>
+    </View>
+  );
+}
+
+interface Produto {
+  id: number;
+  titulo: string;
+  descricao: string;
+  preco: number;
+  categoria: string;
+}
+
+export function Content() {
+  const db = useSQLiteContext();
+  const [produtos, setProdutos] = useState<Produto[]>([]);
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
   const [preco, setPreco] = useState('');
+  const [categoria, setCategoria] = useState('');
 
-  const cadastrar = () => {
-    alert("Você cadastrou ");
-};
+  // Carregar os produtos do banco de dados
+  useEffect(() => {
+    async function setup() {
+      const result = await db.getAllAsync<Produto>('SELECT * FROM produtos');
+      setProdutos(result);
+    }
+    setup();
+  }, [db]);
+
+  // Função para cadastrar novo produto
+  const cadastrarProduto = async () => {
+    await db.runAsync(
+      'INSERT INTO produtos (titulo, descricao, preco, categoria) VALUES (?, ?, ?, ?)',
+      [titulo, descricao, parseFloat(preco), categoria]
+    );
+
+    // Atualizar a lista de produtos após o cadastro
+    const result = await db.getAllAsync<Produto>('SELECT * FROM produtos');
+    setProdutos(result);
+
+    // Limpar os campos
+    setTitulo('');
+    setDescricao('');
+    setPreco('');
+    setCategoria('');
+  };
+
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        <Text style={styles.texto}>ID</Text>
+    <ScrollView style={styles.contentContainer}>
+      {/* Formulário de cadastro de produto */}
+      <View style={styles.inputContainer}>
         <TextInput
           style={styles.input}
-          placeholder="Digite o ID do produto"
-          value={id}
-          onChangeText={setId}
-          keyboardType="numeric"
-        />
-
-        <Text style={styles.texto}>Título</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Digite o Título do produto"
+          placeholder="Título"
           value={titulo}
           onChangeText={setTitulo}
         />
-
-        <Text style={styles.texto}>Descrição</Text>
         <TextInput
           style={styles.input}
-          placeholder="Digite a Descrição do produto"
+          placeholder="Descrição"
           value={descricao}
           onChangeText={setDescricao}
         />
-
-        <Text style={styles.texto}>Preço</Text>
         <TextInput
           style={styles.input}
-          placeholder="Digite o preço do produto"
+          placeholder="Preço"
           value={preco}
           onChangeText={setPreco}
           keyboardType="numeric"
         />
-
-        <Text style={styles.texto}>Categoria</Text>
         <TextInput
           style={styles.input}
-          placeholder="Digite a Categoria do produto"
+          placeholder="Categoria"
           value={categoria}
           onChangeText={setCategoria}
         />
-        
+        <Button title="Cadastrar Produto" onPress={cadastrarProduto} />
+      </View>
 
-        <Button
-            title="Cadastrar"
-            onPress={cadastrar}
-        />
-
-        <View style={styles.espacoInferior}></View>
-
-      </ScrollView>
-
-
-    </View>
+      {/* Lista de produtos cadastrados */}
+      <View>
+        {produtos.map((produto) => (
+          <View style={styles.productItem} key={produto.id}>
+            <Text style={styles.productText}>
+              {produto.titulo} - {produto.descricao} - R$ {produto.preco.toFixed(2)} ({produto.categoria})
+            </Text>
+          </View>
+        ))}
+      </View>
+    </ScrollView>
   );
+}
+
+// Função para criar o banco de dados de produtos
+async function migrateDbIfNeeded(db: SQLiteDatabase) {
+  const DATABASE_VERSION = 1;
+  const result = await db.getFirstAsync<{ user_version: number }>('PRAGMA user_version');
+
+  let currentDbVersion = 0;
+  if (result && result.user_version !== undefined) {
+    currentDbVersion = result.user_version;
+  }
+
+  if (currentDbVersion >= DATABASE_VERSION) {
+    return;
+  }
+
+  if (currentDbVersion === 0) {
+    await db.execAsync(`
+      PRAGMA journal_mode = 'wal';
+      CREATE TABLE produtos (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        titulo TEXT NOT NULL,
+        descricao TEXT NOT NULL,
+        preco REAL NOT NULL,
+        categoria TEXT NOT NULL
+      );
+    `);
+    await db.execAsync(`PRAGMA user_version = ${DATABASE_VERSION}`);
+  }
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f5f5f5', // Fundo mais suave
+    backgroundColor: '#f5f5f5',
     padding: 20,
   },
+  headerContainer: {
+    marginBottom: 20,
+  },
+  headerText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+  },
+  contentContainer: {
+    flex: 1,
+  },
+  inputContainer: {
+    marginBottom: 20,
+  },
   input: {
-    backgroundColor: '#fff', // Fundo branco para o input
+    backgroundColor: '#fff',
     borderWidth: 1,
-    borderColor: '#ddd', // Borda cinza clara
+    borderColor: '#ddd',
     marginBottom: 15,
     paddingLeft: 15,
     paddingTop: 10,
     paddingBottom: 10,
     borderRadius: 10,
-    shadowColor: '#000', // Sombra leve
+    shadowColor: '#000',
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 2,
-    elevation: 2, // Para Android
+    elevation: 2,
   },
-  texto: {
-    fontWeight: '600',
-    fontSize: 16, // Aumenta o tamanho da fonte
-    color: '#333', // Texto mais escuro
-    marginBottom: 5,
+  productItem: {
+    padding: 10,
+    borderBottomWidth: 1,
+    borderColor: '#ddd',
   },
-  espacoInferior:{
-        paddingBottom: 100, // Espaço extra para evitar sobreposição com a barra inferior
-    },
+  productText: {
+    fontSize: 16,
+  },
 });
